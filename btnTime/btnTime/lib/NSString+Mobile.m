@@ -11,7 +11,6 @@
 @implementation NSString (Mobile)
 + (BOOL)valiMobile:(NSString *)mobile
 {
-    mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (mobile.length != 11)
     {
         return NO;
