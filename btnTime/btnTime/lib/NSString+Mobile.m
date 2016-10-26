@@ -13,8 +13,10 @@
 {
     if (mobile.length != 11)
     {
+        //判断手机号码是否为11位
         return NO;
     }else{
+        //使用正则表达式的方法来判断手机号
         /**
          * 移动号段正则表达式
          */
@@ -27,7 +29,10 @@
          * 电信号段正则表达式
          */
         NSString *CT_NUM = @"^((133)|(153)|(177)|(18[0,1,9]))\\d{8}$";
+        
+        //初始化NSPredicate对象
         NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM_NUM];
+        //与具体对象进行筛选判断, 返回为BOOL值
         BOOL isMatch1 = [pred1 evaluateWithObject:mobile];
         NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU_NUM];
         BOOL isMatch2 = [pred2 evaluateWithObject:mobile];
